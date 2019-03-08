@@ -2140,10 +2140,10 @@ static irqreturn_t wcd_mbhc_hphl_ocp_irq(int irq, void *data)
 			mbhc->mbhc_cb->irq_control(mbhc->codec,
 						   mbhc->intr_ids->hph_left_ocp,
 						   false);
-			mbhc->hph_status |= SND_JACK_OC_HPHL;
-			wcd_mbhc_jack_report(mbhc, &mbhc->headset_jack,
-					    mbhc->hph_status,
-					    WCD_MBHC_JACK_MASK);
+		//	mbhc->hph_status |= SND_JACK_OC_HPHL;
+		//	wcd_mbhc_jack_report(mbhc, &mbhc->headset_jack,
+		//			    mbhc->hph_status,
+		//			    WCD_MBHC_JACK_MASK);
 		}
 	} else {
 		pr_err("%s: Bad wcd9xxx_spmi private data\n", __func__);
@@ -2166,9 +2166,9 @@ static irqreturn_t wcd_mbhc_hphr_ocp_irq(int irq, void *data)
 		mbhc->mbhc_cb->irq_control(mbhc->codec,
 					   mbhc->intr_ids->hph_right_ocp,
 					   false);
-		mbhc->hph_status |= SND_JACK_OC_HPHR;
-		wcd_mbhc_jack_report(mbhc, &mbhc->headset_jack,
-				    mbhc->hph_status, WCD_MBHC_JACK_MASK);
+	//	mbhc->hph_status |= SND_JACK_OC_HPHR;
+	//	wcd_mbhc_jack_report(mbhc, &mbhc->headset_jack,
+	//			    mbhc->hph_status, WCD_MBHC_JACK_MASK);
 	}
 	return IRQ_HANDLED;
 }
